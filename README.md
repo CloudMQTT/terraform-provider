@@ -1,11 +1,11 @@
-# Terraform provider for CloudKarafka
+# Terraform provider for CloudMQTT
 
-Setup your CloudKarafka cluster with Terraform
+Setup your CloudMQTT cluster with Terraform
 
 ## Install
 
 ```sh
-git clone https://github.com/cloudkarafka/terraform-provider.git
+git clone https://github.com/cloudmqtt/terraform-provider.git
 cd terraform-provider
 make depupdate
 make init
@@ -16,17 +16,16 @@ Now the provider is installed in the terraform plugins folder and ready to be us
 ## Example
 
 ```hcl
-provider "cloudkarafka" {}
+provider "cloudmqtt" {}
 
-resource "cloudkarafka_instance" "kafka_bat" {
+resource "cloudmqtt_instance" "mqtt_koala" {
   name   = "terraform-provider-test"
-  plan   = "bat-3"
+  plan   = "koala"
   region = "amazon-web-services::us-east-1"
-  vpc_subnet = "10.201.0.0/24"
 }
 
-output "kafka_brokers" {
-  value = "${cloudkarafka_instance.kafka_bat.brokers}"
+output "mqtt_url" {
+  value = "${cloudmqtt_instance.mqtt_koala.url}"
 }
 ```
 

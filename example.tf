@@ -1,12 +1,11 @@
-provider "cloudkarafka" {}
+provider "cloudmqtt" {}
 
-resource "cloudkarafka_instance" "kafka_bat" {
+resource "cloudmqtt_instance" "mqtt_koala" {
   name   = "terraform-provider-test"
-  plan   = "bat-3"
+  plan   = "koala"
   region = "amazon-web-services::us-east-1"
-  vpc_subnet = "10.201.0.0/24"
 }
 
-output "kafka_brokers" {
-  value = "${cloudkarafka_instance.kafka_bat.brokers}"
+output "mqtt_url" {
+  value = "${cloudmqtt_instance.mqtt_koala.url}"
 }
