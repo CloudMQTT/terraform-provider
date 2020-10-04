@@ -1,6 +1,6 @@
 # Terraform provider for CloudMQTT
 
-Setup your CloudMQTT cluster with Terraform
+Set up your CloudMQTT cluster with Terraform
 
 ## Install
 
